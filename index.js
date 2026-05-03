@@ -4,6 +4,7 @@ require('dotenv').config();
 // === Module imports ===
 const { Mwn } = require('mwn');
 const si = require('systeminformation');
+const axios = require('axios');
 
 // === Configuration dynamique ===
 let config = {
@@ -18,6 +19,7 @@ let config = {
 // === Page des cibles & config sur Wiki ===
 const TARGET_LIST_PAGE = `Utilisateur:${process.env.WIKI_BOTUSER.split("@")[0].replace(" ","_")}/MonitoringTargets`;
 const CONFIG_PAGE = `Utilisateur:${process.env.WIKI_BOTUSER.split("@")[0].replace(" ","_")}/MonitoringConfig`;
+const URL_LIST_PAGE = `Utilisateur:${process.env.WIKI_BOTUSER.split("@")[0].replace(" ","_")}/MonitoringURLs`;
 console.log(TARGET_LIST_PAGE)
 // === Nom racine alerte (format Bistro) ===
 const BISTRO_ROOT = 'Wikipédia:Le Bistro';
@@ -89,6 +91,52 @@ async function getTargetPages() {
         .split('\n')
         .map(l => l.trim())
         .filter(Boolean);
+}
+
+async function getMonitorUrls() {
+    try {
+        const txt = await bot.read(URL_LIST_PAGE);
+        if (!txt || !txt.revisions) return [];
+        return txt.revisions[0].content
+            .split('\n')
+            .map(l => l.trim())
+            .filter(l => l.startsWith('http'));
+    } catch (e) {
+        console.error("Erreur lors de la lecture des URLs à monitorer", e);
+        return [];
+    }
+}
+
+async function initializeWikiPages() {
+    const pages = [
+        {
+            title: TARGET_LIST_PAGE,
+            content: `Utilisateur:${process.env.WIKI_BOTUSER.split("@")[0].replace(" ","_")}/MonitoringLog`,
+            summary: '[MonitoringBot] Initialisation de la liste des cibles'
+        },
+        {
+            title: CONFIG_PAGE,
+            content: formatConfig(config),
+            summary: '[MonitoringBot] Initialisation de la configuration'
+        },
+        {
+            title: URL_LIST_PAGE,
+            content: 'https://www.google.com\nhttps://fr.wikipedia.org',
+            summary: '[MonitoringBot] Initialisation de la liste des URLs (Downdetector)'
+        }
+    ];
+
+    for (const page of pages) {
+        try {
+            const exists = await bot.read(page.title);
+            if (!exists || !exists.revisions) {
+                await bot.save(page.title, page.content, page.summary);
+                console.log(`Page créée : ${page.title}`);
+            }
+        } catch (e) {
+            console.error(`Erreur lors de l'initialisation de ${page.title}`, e);
+        }
+    }
 }
 
 async function sendAlertToWiki(msg) {
@@ -170,6 +218,19 @@ disk.forEach(d => {
         });
     }
 
+    // URLs (Downdetector)
+    const urls = await getMonitorUrls();
+    await Promise.all(urls.map(async (url) => {
+        try {
+            await axios.get(url, { timeout: 10000 });
+        } catch (e) {
+            currentAlerts.push({
+                id: `URL:${url}`,
+                msg: `Site inaccessible: ${url} (${e.message})`
+            });
+        }
+    }));
+
     // 🔥 Envoi et gestion état
     for (const alert of currentAlerts) {
         if (!activeWarnings.has(alert.id)) {
@@ -196,6 +257,7 @@ async function loop() {
 
 (async () => {
     await bot.login();
+    await initializeWikiPages();
 	await sendAlertToWiki(" le système de monitoring a redémarrée")
     console.log("MonitoringBot connecté à Wikipédia 🎯");
 	loop()
