@@ -8,6 +8,7 @@ const axios = require('axios');
 const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
+const { log } = require('console');
 
 const LOG_FILE = path.join(__dirname, 'bot.log');
 
@@ -329,6 +330,7 @@ async function loop() {
         // bot.getTokensAndSiteInfo() rafraîchit les jetons et les infos utilisateur
         await bot.getTokensAndSiteInfo();
         bot.userinfo().then(async (info) => {
+            logToFile(`Vérification session... (Utilisateur actuel: ${info?.name || 'inconnu'})`);
             const currentUser = info?.name;
  if (!currentUser) {
             logToFile("Session non détectée. Tentative de connexion...", 'WARN');
