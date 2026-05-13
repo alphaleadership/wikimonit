@@ -317,7 +317,7 @@ async function loop() {
     try {
         // bot.getTokensAndSiteInfo() rafraîchit les jetons et les infos utilisateur
         await bot.getTokensAndSiteInfo();
-        bot.userinfo().then((info) => {
+        bot.userinfo().then(async (info) => {
             const currentUser = info?.name;
  if (!currentUser) {
             logToFile("Session non détectée. Tentative de connexion...", 'WARN');
