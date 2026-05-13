@@ -5,8 +5,22 @@ require('dotenv').config();
 const { Mwn } = require('mwn');
 const si = require('systeminformation');
 const axios = require('axios');
+const fs = require('fs');
+const path = require('path');
 
-// === Configuration dynamique ===
+const LOG_FILE = path.join(__dirname, 'bot.log');
+
+// === Utilitaires ===
+function logToFile(message, level = 'INFO') {
+    const timestamp = new Date().toISOString();
+    const formattedMessage = `[${timestamp}] [${level}] ${message}\n`;
+    console.log(formattedMessage.trim()); // Garde aussi l'affichage console
+    try {
+        fs.appendFileSync(LOG_FILE, formattedMessage);
+    } catch (err) {
+        console.error('Erreur écriture log:', err);
+    }
+}
 let config = {
     intervalSec: parseInt(process.env.INTERVAL_SEC) || 30,
     cpuAlertPct: parseInt(process.env.CPU_ALERT_PCT) || 80,
@@ -133,17 +147,16 @@ async function initializeWikiPages() {
             const exists = await bot.read(page.title);
             if (!exists || !exists.revisions) {
                 await bot.save(page.title, page.content, page.summary);
-                console.log(`Page créée : ${page.title}`);
+                logToFile(`Page créée : ${page.title}`);
             }
         } catch (e) {
-            console.error(`Erreur lors de l'initialisation de ${page.title}`, e);
+            logToFile(`Erreur lors de l'initialisation de ${page.title}: ${e.message}`, 'ERROR');
         }
     }
 }
 
 async function sendAlertToWiki(msg) {
     const targetPages = await getTargetPages();
-console.log(targetPages)
     const text = `\n== Alerte système == \n${new Date().toISOString()} — ${msg} \n~~~~ `;
 
     for (const page of targetPages) {
@@ -153,9 +166,9 @@ console.log(targetPages)
                 oldText => oldText.content + '\n'+text,
                 '[MonitoringBot] Alerte système'
             );
-            console.log(`Alerte envoyée sur : ${page}`);
+            logToFile(`Alerte envoyée sur : ${page}`);
         } catch (e) {
-            console.error(`⚠️ Erreur alerte sur ${page}`, e);
+            logToFile(`Erreur alerte sur ${page}: ${e.message}`, 'ERROR');
         }
     }
 }
