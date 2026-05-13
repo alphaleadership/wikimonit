@@ -51,7 +51,7 @@ function syncGit() {
         }
 
         logToFile('Synchronisation Git (Pull)...');
-        const pullOutput = execSync('git pull --rebase', { encoding: 'utf-8' });
+        const pullOutput = execSync('git pull ', { encoding: 'utf-8' });
         if (!pullOutput.includes('Already up to date.')) {
             logToFile(`Mise à jour reçue : ${pullOutput.trim()}`);
             
