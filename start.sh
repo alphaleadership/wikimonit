@@ -1,1 +1,1 @@
-npm i & node index
+npm run dev
