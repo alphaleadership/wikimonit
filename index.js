@@ -25,7 +25,20 @@ function logToFile(message, level = 'INFO') {
 
 function syncGit() {
     try {
-        // 1. Vérifier s'il y a des changements locaux à envoyer d'abord
+        // 1. Sauvegarde des logs sur la branche dédiée
+        logToFile('Synchronisation des logs...');
+        execSync('git checkout logs', { stdio: 'ignore' });
+        // On s'assure que bot.log est bien ajouté même s'il est dans .gitignore de main
+        execSync('git add -f bot.log', { stdio: 'ignore' });
+        const logStatus = execSync('git status --porcelain', { encoding: 'utf-8' }).trim();
+        if (logStatus) {
+            execSync('git commit -m "Bot: mise à jour des logs"', { stdio: 'ignore' });
+            execSync('git push origin logs', { stdio: 'ignore' });
+            logToFile('Logs synchronisés sur la branche logs.');
+        }
+        execSync('git checkout main', { stdio: 'ignore' });
+
+        // 2. Synchronisation du code (Main)
         const status = execSync('git status --porcelain', { encoding: 'utf-8' }).trim();
         if (status) {
             logToFile('Changements locaux détectés. Préparation du commit...');
@@ -37,24 +50,22 @@ function syncGit() {
             logToFile('Changements locaux commités.');
         }
 
-        // 2. Synchronisation (Pull)
         logToFile('Synchronisation Git (Pull)...');
         const pullOutput = execSync('git pull --rebase', { encoding: 'utf-8' });
         if (!pullOutput.includes('Already up to date.')) {
             logToFile(`Mise à jour reçue : ${pullOutput.trim()}`);
         }
 
-        // 3. Envoyer tout (Push)
         if (status || !pullOutput.includes('Already up to date.')) {
             logToFile('Synchronisation Git (Push)...');
-            const pushOutput = execSync('git push', { encoding: 'utf-8' });
+            const pushOutput = execSync('git push origin main', { encoding: 'utf-8' });
             logToFile(`Synchronisation terminée : ${pushOutput.trim() || 'OK'}`);
         }
     } catch (e) {
         logToFile(`Erreur lors de la synchronisation Git : ${e.message}`, 'ERROR');
-        if (e.message.includes('rebase')) {
-            try { execSync('git rebase --abort'); } catch(err) {}
-        }
+        // Nettoyage en cas d'erreur
+        try { execSync('git rebase --abort'); } catch(err) {}
+        try { execSync('git checkout main'); } catch(err) {}
     }
 }
 let config = {
