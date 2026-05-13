@@ -7,6 +7,7 @@ const si = require('systeminformation');
 const axios = require('axios');
 const fs = require('fs');
 const path = require('path');
+const { execSync } = require('child_process');
 
 const LOG_FILE = path.join(__dirname, 'bot.log');
 
@@ -19,6 +20,21 @@ function logToFile(message, level = 'INFO') {
         fs.appendFileSync(LOG_FILE, formattedMessage);
     } catch (err) {
         console.error('Erreur écriture log:', err);
+    }
+}
+
+function syncGit() {
+    try {
+        logToFile('Vérification des mises à jour Git...');
+        const output = execSync('git pull', { encoding: 'utf-8' });
+        if (output.includes('Already up to date.')) {
+            logToFile('Le code est déjà à jour.');
+        } else {
+            logToFile(`Mise à jour effectuée : ${output.trim()}`);
+            logToFile('Redémarrage recommandé si des fichiers critiques ont changé.', 'WARN');
+        }
+    } catch (e) {
+        logToFile(`Erreur lors du sync Git : ${e.message}`, 'ERROR');
     }
 }
 let config = {
@@ -266,6 +282,7 @@ disk.forEach(d => {
 
 // === Loop ===
 async function loop() {
+    syncGit();
     try {
         await bot.getTokensAndSiteInfo();
         if (!bot.userinfo || bot.userinfo.name !== botAccountName) {
