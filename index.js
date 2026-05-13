@@ -300,25 +300,30 @@ disk.forEach(d => {
 async function loop() {
     syncGit();
     try {
+        // bot.getTokensAndSiteInfo() rafraîchit les jetons et les infos utilisateur
         await bot.getTokensAndSiteInfo();
         const currentUser = bot.userinfo?.name;
         
-        // On vérifie si on est toujours connecté avec le bon compte
-        // botAccountName est "Pmartin", currentUser devrait être "Pmartin"
-        if (!currentUser || currentUser.toLowerCase() !== botAccountName.toLowerCase()) {
-            logToFile(`Session incorrecte (Actuel: ${currentUser || 'anonyme'}, Attendu: ${botAccountName}). Re-connexion...`, 'WARN');
+        if (!currentUser) {
+            logToFile("Session non détectée. Tentative de connexion...", 'WARN');
+            await bot.login();
+        } else if (currentUser.toLowerCase() !== botAccountName.toLowerCase()) {
+            logToFile(`Compte incorrect (Actuel: ${currentUser}, Attendu: ${botAccountName}). Re-connexion...`, 'WARN');
+            await bot.logout();
             await bot.login();
         }
+        // Si currentUser === botAccountName, on ne fait rien, on est déjà bien connecté
     } catch (e) {
-        if (e.message.includes('Already logged in')) {
-            // Déjà connecté, on peut continuer
-        } else {
-            logToFile(`Erreur session: ${e.message}`, 'ERROR');
-            await bot.login().catch(err => {
-                if (!err.message.includes('Already logged in')) {
-                    logToFile(`Échec re-connexion: ${err.message}`, 'ERROR');
+        if (!e.message.includes('Already logged in')) {
+            logToFile(`Erreur vérification session: ${e.message}`, 'ERROR');
+            // Tentative de secours
+            try {
+                await bot.login();
+            } catch (loginErr) {
+                if (!loginErr.message.includes('Already logged in')) {
+                    logToFile(`Échec secours connexion: ${loginErr.message}`, 'ERROR');
                 }
-            });
+            }
         }
     }
 

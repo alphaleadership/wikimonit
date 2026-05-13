@@ -1,0 +1,130 @@
+[2026-05-13T06:39:07.038Z] [INFO] Utilisateur:Pmartin/MonitoringTargets
+[2026-05-13T06:39:14.884Z] [INFO] Alerte envoyée sur : Discussion_utilisateur:Arbinger_bot
+[2026-05-13T06:39:16.840Z] [INFO] Alerte envoyée sur : Discussion_utilisateur:Pmartin
+[2026-05-13T06:39:17.503Z] [INFO] Alerte envoyée sur : Discussion_utilisateur:Spartan.arbinger
+[2026-05-13T06:39:17.503Z] [INFO] MonitoringBot connecté à Wikipédia 🎯
+[2026-05-13T06:39:17.504Z] [INFO] Vérification des mises à jour Git...
+[2026-05-13T06:39:17.838Z] [INFO] Le code est déjà à jour.
+[2026-05-13T06:39:18.057Z] [WARN] Session perdue (actuellement: userinfo). Re-connexion...
+[2026-05-13T06:39:18.387Z] [ERROR] Erreur session, tentative de reconnexion: Already logged in as Pmartin@wikibot, logout first to re-login
+[2026-05-13T06:39:18.761Z] [ERROR] Échec re-connexion: Already logged in as Pmartin@wikibot, logout first to re-login
+[2026-05-13T06:39:19.350Z] [WARN] Config restaurée suite à modification non autorisée par undefined
+[2026-05-13T06:39:20.449Z] [INFO] Alerte envoyée sur : Discussion_utilisateur:Arbinger_bot
+[2026-05-13T06:39:21.816Z] [INFO] Alerte envoyée sur : Discussion_utilisateur:Pmartin
+[2026-05-13T06:39:22.611Z] [INFO] Alerte envoyée sur : Discussion_utilisateur:Spartan.arbinger
+[2026-05-13T06:39:37.839Z] [INFO] Vérification des mises à jour Git...
+[2026-05-13T06:39:38.191Z] [INFO] Le code est déjà à jour.
+[2026-05-13T06:39:38.379Z] [WARN] Session perdue (actuellement: userinfo). Re-connexion...
+[2026-05-13T06:39:38.783Z] [ERROR] Erreur session, tentative de reconnexion: Already logged in as Pmartin@wikibot, logout first to re-login
+[2026-05-13T06:39:39.134Z] [ERROR] Échec re-connexion: Already logged in as Pmartin@wikibot, logout first to re-login
+[2026-05-13T06:39:39.773Z] [WARN] Config restaurée suite à modification non autorisée par undefined
+[2026-05-13T06:39:57.839Z] [INFO] Vérification des mises à jour Git...
+[2026-05-13T06:39:58.204Z] [INFO] Le code est déjà à jour.
+[2026-05-13T06:39:58.373Z] [WARN] Session perdue (actuellement: userinfo). Re-connexion...
+[2026-05-13T06:39:58.741Z] [ERROR] Erreur session, tentative de reconnexion: Already logged in as Pmartin@wikibot, logout first to re-login
+[2026-05-13T06:39:59.134Z] [ERROR] Échec re-connexion: Already logged in as Pmartin@wikibot, logout first to re-login
+[2026-05-13T06:39:59.735Z] [WARN] Config restaurée suite à modification non autorisée par undefined
+[2026-05-13T06:40:17.839Z] [INFO] Vérification des mises à jour Git...
+[2026-05-13T06:40:18.217Z] [INFO] Le code est déjà à jour.
+[2026-05-13T06:40:18.393Z] [WARN] Session perdue (actuellement: userinfo). Re-connexion...
+[2026-05-13T06:40:18.781Z] [ERROR] Erreur session, tentative de reconnexion: Already logged in as Pmartin@wikibot, logout first to re-login
+[2026-05-13T06:40:19.118Z] [ERROR] Échec re-connexion: Already logged in as Pmartin@wikibot, logout first to re-login
+[2026-05-13T06:40:19.691Z] [WARN] Config restaurée suite à modification non autorisée par undefined
+[2026-05-13T06:40:37.839Z] [INFO] Vérification des mises à jour Git...
+[2026-05-13T06:40:38.177Z] [INFO] Le code est déjà à jour.
+[2026-05-13T06:40:38.365Z] [WARN] Session perdue (actuellement: userinfo). Re-connexion...
+[2026-05-13T06:40:38.714Z] [ERROR] Erreur session, tentative de reconnexion: Already logged in as Pmartin@wikibot, logout first to re-login
+[2026-05-13T06:40:39.089Z] [ERROR] Échec re-connexion: Already logged in as Pmartin@wikibot, logout first to re-login
+[2026-05-13T06:40:39.712Z] [WARN] Config restaurée suite à modification non autorisée par undefined
+[2026-05-13T06:40:57.839Z] [INFO] Vérification des mises à jour Git...
+[2026-05-13T06:40:58.202Z] [INFO] Le code est déjà à jour.
+[2026-05-13T06:40:58.385Z] [WARN] Session perdue (actuellement: userinfo). Re-connexion...
+[2026-05-13T06:40:58.757Z] [ERROR] Erreur session, tentative de reconnexion: Already logged in as Pmartin@wikibot, logout first to re-login
+[2026-05-13T06:40:59.163Z] [ERROR] Échec re-connexion: Already logged in as Pmartin@wikibot, logout first to re-login
+[2026-05-13T06:40:59.865Z] [WARN] Config restaurée suite à modification non autorisée par undefined
+[2026-05-13T06:41:17.839Z] [INFO] Vérification des mises à jour Git...
+[2026-05-13T06:41:18.193Z] [INFO] Le code est déjà à jour.
+[2026-05-13T06:41:18.371Z] [WARN] Session perdue (actuellement: userinfo). Re-connexion...
+[2026-05-13T06:41:18.743Z] [ERROR] Erreur session, tentative de reconnexion: Already logged in as Pmartin@wikibot, logout first to re-login
+[2026-05-13T06:41:19.067Z] [ERROR] Échec re-connexion: Already logged in as Pmartin@wikibot, logout first to re-login
+[2026-05-13T06:41:19.731Z] [WARN] Config restaurée suite à modification non autorisée par undefined
+[2026-05-13T06:41:37.840Z] [INFO] Vérification des mises à jour Git...
+[2026-05-13T06:41:38.258Z] [INFO] Le code est déjà à jour.
+[2026-05-13T06:41:38.459Z] [WARN] Session perdue (actuellement: userinfo). Re-connexion...
+[2026-05-13T06:41:38.819Z] [ERROR] Erreur session, tentative de reconnexion: Already logged in as Pmartin@wikibot, logout first to re-login
+[2026-05-13T06:41:39.201Z] [ERROR] Échec re-connexion: Already logged in as Pmartin@wikibot, logout first to re-login
+[2026-05-13T06:41:39.795Z] [WARN] Config restaurée suite à modification non autorisée par undefined
+[2026-05-13T06:41:57.840Z] [INFO] Vérification des mises à jour Git...
+[2026-05-13T06:41:58.158Z] [INFO] Le code est déjà à jour.
+[2026-05-13T06:41:58.340Z] [WARN] Session perdue (actuellement: userinfo). Re-connexion...
+[2026-05-13T06:41:58.699Z] [ERROR] Erreur session, tentative de reconnexion: Already logged in as Pmartin@wikibot, logout first to re-login
+[2026-05-13T06:41:59.227Z] [ERROR] Échec re-connexion: Already logged in as Pmartin@wikibot, logout first to re-login
+[2026-05-13T06:41:59.878Z] [WARN] Config restaurée suite à modification non autorisée par undefined
+[2026-05-13T06:42:17.841Z] [INFO] Vérification des mises à jour Git...
+[2026-05-13T06:42:18.197Z] [INFO] Le code est déjà à jour.
+[2026-05-13T06:42:18.377Z] [WARN] Session perdue (actuellement: userinfo). Re-connexion...
+[2026-05-13T06:42:18.750Z] [ERROR] Erreur session, tentative de reconnexion: Already logged in as Pmartin@wikibot, logout first to re-login
+[2026-05-13T06:42:19.149Z] [ERROR] Échec re-connexion: Already logged in as Pmartin@wikibot, logout first to re-login
+[2026-05-13T06:42:19.752Z] [WARN] Config restaurée suite à modification non autorisée par undefined
+[2026-05-13T06:42:37.841Z] [INFO] Vérification des mises à jour Git...
+[2026-05-13T06:42:38.157Z] [INFO] Le code est déjà à jour.
+[2026-05-13T06:42:38.395Z] [WARN] Session perdue (actuellement: userinfo). Re-connexion...
+[2026-05-13T06:42:38.774Z] [ERROR] Erreur session, tentative de reconnexion: Already logged in as Pmartin@wikibot, logout first to re-login
+[2026-05-13T06:42:39.122Z] [ERROR] Échec re-connexion: Already logged in as Pmartin@wikibot, logout first to re-login
+[2026-05-13T06:42:39.739Z] [WARN] Config restaurée suite à modification non autorisée par undefined
+[2026-05-13T06:42:57.841Z] [INFO] Vérification des mises à jour Git...
+[2026-05-13T06:42:58.231Z] [INFO] Le code est déjà à jour.
+[2026-05-13T06:42:58.405Z] [WARN] Session perdue (actuellement: userinfo). Re-connexion...
+[2026-05-13T06:42:58.766Z] [ERROR] Erreur session, tentative de reconnexion: Already logged in as Pmartin@wikibot, logout first to re-login
+[2026-05-13T06:42:59.164Z] [ERROR] Échec re-connexion: Already logged in as Pmartin@wikibot, logout first to re-login
+[2026-05-13T06:42:59.815Z] [WARN] Config restaurée suite à modification non autorisée par undefined
+[2026-05-13T06:43:17.842Z] [INFO] Vérification des mises à jour Git...
+[2026-05-13T06:43:18.346Z] [INFO] Mise à jour effectuée : Updating 7af3f5a..836fc03
+Fast-forward
+ index.js | 24 ++++++++++++++++++------
+ 1 file changed, 18 insertions(+), 6 deletions(-)
+[2026-05-13T06:43:18.346Z] [WARN] Redémarrage recommandé si des fichiers critiques ont changé.
+[2026-05-13T06:43:18.527Z] [WARN] Session perdue (actuellement: userinfo). Re-connexion...
+[2026-05-13T06:43:18.931Z] [ERROR] Erreur session, tentative de reconnexion: Already logged in as Pmartin@wikibot, logout first to re-login
+[2026-05-13T06:43:19.325Z] [ERROR] Échec re-connexion: Already logged in as Pmartin@wikibot, logout first to re-login
+[2026-05-13T06:43:19.939Z] [WARN] Config restaurée suite à modification non autorisée par undefined
+[2026-05-13T06:43:37.842Z] [INFO] Vérification des mises à jour Git...
+[2026-05-13T06:43:38.218Z] [INFO] Le code est déjà à jour.
+[2026-05-13T06:43:38.415Z] [WARN] Session perdue (actuellement: userinfo). Re-connexion...
+[2026-05-13T06:43:38.747Z] [ERROR] Erreur session, tentative de reconnexion: Already logged in as Pmartin@wikibot, logout first to re-login
+[2026-05-13T06:43:39.104Z] [ERROR] Échec re-connexion: Already logged in as Pmartin@wikibot, logout first to re-login
+[2026-05-13T06:43:39.772Z] [WARN] Config restaurée suite à modification non autorisée par undefined
+[2026-05-13T06:43:57.842Z] [INFO] Vérification des mises à jour Git...
+[2026-05-13T06:43:58.189Z] [INFO] Le code est déjà à jour.
+[2026-05-13T06:43:58.431Z] [WARN] Session perdue (actuellement: userinfo). Re-connexion...
+[2026-05-13T06:43:58.779Z] [ERROR] Erreur session, tentative de reconnexion: Already logged in as Pmartin@wikibot, logout first to re-login
+[2026-05-13T06:43:59.140Z] [ERROR] Échec re-connexion: Already logged in as Pmartin@wikibot, logout first to re-login
+[2026-05-13T06:43:59.701Z] [WARN] Config restaurée suite à modification non autorisée par undefined
+[2026-05-13T06:44:17.844Z] [INFO] Vérification des mises à jour Git...
+[2026-05-13T06:44:18.188Z] [INFO] Le code est déjà à jour.
+[2026-05-13T06:44:18.368Z] [WARN] Session perdue (actuellement: userinfo). Re-connexion...
+[2026-05-13T06:44:18.719Z] [ERROR] Erreur session, tentative de reconnexion: Already logged in as Pmartin@wikibot, logout first to re-login
+[2026-05-13T06:44:19.122Z] [ERROR] Échec re-connexion: Already logged in as Pmartin@wikibot, logout first to re-login
+[2026-05-13T06:44:19.737Z] [WARN] Config restaurée suite à modification non autorisée par undefined
+[2026-05-13T06:44:37.844Z] [INFO] Vérification des mises à jour Git...
+[2026-05-13T06:44:38.352Z] [INFO] Mise à jour effectuée : Updating 836fc03..eefa3ab
+Fast-forward
+ index.js | 32 ++++++++++++++++++++++++--------
+ 1 file changed, 24 insertions(+), 8 deletions(-)
+[2026-05-13T06:44:38.352Z] [WARN] Redémarrage recommandé si des fichiers critiques ont changé.
+[2026-05-13T06:44:38.538Z] [WARN] Session perdue (actuellement: userinfo). Re-connexion...
+[2026-05-13T06:44:38.884Z] [ERROR] Erreur session, tentative de reconnexion: Already logged in as Pmartin@wikibot, logout first to re-login
+[2026-05-13T06:44:39.237Z] [ERROR] Échec re-connexion: Already logged in as Pmartin@wikibot, logout first to re-login
+[2026-05-13T06:44:39.840Z] [WARN] Config restaurée suite à modification non autorisée par undefined
+[2026-05-13T06:44:57.844Z] [INFO] Vérification des mises à jour Git...
+[2026-05-13T06:44:58.257Z] [INFO] Le code est déjà à jour.
+[2026-05-13T06:44:58.429Z] [WARN] Session perdue (actuellement: userinfo). Re-connexion...
+[2026-05-13T06:44:58.813Z] [ERROR] Erreur session, tentative de reconnexion: Already logged in as Pmartin@wikibot, logout first to re-login
+[2026-05-13T06:44:59.159Z] [ERROR] Échec re-connexion: Already logged in as Pmartin@wikibot, logout first to re-login
+[2026-05-13T06:44:59.768Z] [WARN] Config restaurée suite à modification non autorisée par undefined
+[2026-05-13T06:45:17.845Z] [INFO] Vérification des mises à jour Git...
+[2026-05-13T06:45:18.260Z] [INFO] Le code est déjà à jour.
+[2026-05-13T06:45:18.437Z] [WARN] Session perdue (actuellement: userinfo). Re-connexion...
+[2026-05-13T06:45:18.848Z] [ERROR] Erreur session, tentative de reconnexion: Already logged in as Pmartin@wikibot, logout first to re-login
+[2026-05-13T06:45:19.191Z] [ERROR] Échec re-connexion: Already logged in as Pmartin@wikibot, logout first to re-login
+[2026-05-13T06:45:19.820Z] [WARN] Config restaurée suite à modification non autorisée par undefined
