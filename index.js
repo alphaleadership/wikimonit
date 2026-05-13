@@ -100,9 +100,9 @@ async function readConfigFromWiki() {
 
 async function ensureTargetsAllowed() {
     try {
-        const content = await bot.read(CONFIG_PAGE);
+        const content = await bot.read(CONFIG_PAGE, { rvprop: 'content|user' });
         const latest = content.revisions?.[0]?.user;
-        if (!allowedUsers.has(latest)) {
+        if (latest && !allowedUsers.has(latest)) {
             await bot.save(CONFIG_PAGE, formatConfig(config), '[MonitoringBot] Restauration config autorisée');
             logToFile(`Config restaurée suite à modification non autorisée par ${latest}`, 'WARN');
         }
@@ -285,13 +285,25 @@ async function loop() {
     syncGit();
     try {
         await bot.getTokensAndSiteInfo();
-        if (!bot.userinfo || bot.userinfo.name !== botAccountName) {
-            logToFile(`Session perdue (actuellement: ${bot.userinfo?.name || 'anonyme'}). Re-connexion...`, 'WARN');
+        const currentUser = bot.userinfo?.name;
+        
+        // On vérifie si on est toujours connecté avec le bon compte
+        // botAccountName est "Pmartin", currentUser devrait être "Pmartin"
+        if (!currentUser || currentUser.toLowerCase() !== botAccountName.toLowerCase()) {
+            logToFile(`Session incorrecte (Actuel: ${currentUser || 'anonyme'}, Attendu: ${botAccountName}). Re-connexion...`, 'WARN');
             await bot.login();
         }
     } catch (e) {
-        logToFile(`Erreur session, tentative de reconnexion: ${e.message}`, 'ERROR');
-        await bot.login().catch(err => logToFile(`Échec re-connexion: ${err.message}`, 'ERROR'));
+        if (e.message.includes('Already logged in')) {
+            // Déjà connecté, on peut continuer
+        } else {
+            logToFile(`Erreur session: ${e.message}`, 'ERROR');
+            await bot.login().catch(err => {
+                if (!err.message.includes('Already logged in')) {
+                    logToFile(`Échec re-connexion: ${err.message}`, 'ERROR');
+                }
+            });
+        }
     }
 
     await readConfigFromWiki();
