@@ -34,7 +34,7 @@ let config = {
 const TARGET_LIST_PAGE = `Utilisateur:${process.env.WIKI_BOTUSER.split("@")[0].replace(" ","_")}/MonitoringTargets`;
 const CONFIG_PAGE = `Utilisateur:${process.env.WIKI_BOTUSER.split("@")[0].replace(" ","_")}/MonitoringConfig`;
 const URL_LIST_PAGE = `Utilisateur:${process.env.WIKI_BOTUSER.split("@")[0].replace(" ","_")}/MonitoringURLs`;
-console.log(TARGET_LIST_PAGE)
+logToFile(TARGET_LIST_PAGE)
 // === Nom racine alerte (format Bistro) ===
 const BISTRO_ROOT = 'Wikipédia:Le Bistro';
 
@@ -59,7 +59,7 @@ function todayBistroPage() {
     const day = date.getUTCDate();
     const month = date.toLocaleString('fr-FR', { month: 'long', timeZone: 'UTC' });
     const year = date.getUTCFullYear();
-console.log(date)
+logToFile(date)
     return `${BISTRO_ROOT}/${day} ${month} ${year}`;
 }
 
@@ -67,9 +67,7 @@ async function readConfigFromWiki() {
     try {
         const res = await bot.read(CONFIG_PAGE);
         if (!res) return;
-	console.log(res)
         const lines = res.revisions?.[0]?.content.split('\n');
-	console.log(lines)
         let newConfig = { ...config };
 
         for (const l of lines) {
@@ -78,20 +76,23 @@ async function readConfigFromWiki() {
                 newConfig[m[1]] = parseInt(m[2]);
             }
         }
-console.log(config)
         config = newConfig;
-    } catch(e) {console.log(e)}
+    } catch(e) {
+        logToFile(`Erreur lecture config: ${e.message}`, 'ERROR');
+    }
 }
 
 async function ensureTargetsAllowed() {
-//    console.log(bot)
-try {
+    try {
         const content = await bot.read(CONFIG_PAGE);
         const latest = content.revisions?.[0]?.user;
         if (!allowedUsers.has(latest)) {
             await bot.save(CONFIG_PAGE, formatConfig(config), '[MonitoringBot] Restauration config autorisée');
+            logToFile(`Config restaurée suite à modification non autorisée par ${latest}`, 'WARN');
         }
-    } catch (e){console.log(e)}
+    } catch (e){
+        logToFile(`Erreur vérification droits: ${e.message}`, 'ERROR');
+    }
 }
 
 function formatConfig(obj) {
@@ -102,7 +103,7 @@ function formatConfig(obj) {
 
 async function getTargetPages() {
     const txt = await bot.read(TARGET_LIST_PAGE) || '';
-    console.log(txt)
+    if (!txt || !txt.revisions) return [];
     return txt.revisions[0].content
         .split('\n')
         .map(l => l.trim())
@@ -118,7 +119,7 @@ async function getMonitorUrls() {
             .map(l => l.trim())
             .filter(l => l.startsWith('http'));
     } catch (e) {
-        console.error("Erreur lors de la lecture des URLs à monitorer", e);
+        logToFile(`Erreur lecture URLs à monitorer: ${e.message}`, 'ERROR');
         return [];
     }
 }
@@ -188,7 +189,7 @@ async function checkSystem() {
         si.fsSize(),
         si.networkStats()
     ]);
-//	console.log(cpu)
+//	logToFile(cpu)
     const currentAlerts = [];
 
     // CPU
@@ -268,12 +269,12 @@ async function loop() {
     try {
         await bot.getTokensAndSiteInfo();
         if (!bot.userinfo || bot.userinfo.name !== botAccountName) {
-            console.warn(`[MonitoringBot] Session perdue (actuellement: ${bot.userinfo?.name || 'anonyme'}). Re-connexion...`);
+            logToFile(`Session perdue (actuellement: ${bot.userinfo?.name || 'anonyme'}). Re-connexion...`, 'WARN');
             await bot.login();
         }
     } catch (e) {
-        console.error("[MonitoringBot] Erreur session, tentative de reconnexion...", e.message);
-        await bot.login().catch(err => console.error("[MonitoringBot] Échec re-connexion", err.message));
+        logToFile(`Erreur session, tentative de reconnexion: ${e.message}`, 'ERROR');
+        await bot.login().catch(err => logToFile(`Échec re-connexion: ${err.message}`, 'ERROR'));
     }
 
     await readConfigFromWiki();
@@ -282,10 +283,14 @@ async function loop() {
 }
 
 (async () => {
-    await bot.login();
-    await initializeWikiPages();
-	await sendAlertToWiki(" le système de monitoring a redémarrée")
-    console.log("MonitoringBot connecté à Wikipédia 🎯");
-	loop()
-    setInterval(loop, config.intervalSec * 1000);
+    try {
+        await bot.login();
+        await initializeWikiPages();
+        await sendAlertToWiki("Le système de monitoring a redémarré");
+        logToFile("MonitoringBot connecté à Wikipédia 🎯");
+        loop();
+        setInterval(loop, config.intervalSec * 1000);
+    } catch (e) {
+        logToFile(`Erreur fatale au démarrage: ${e.message}`, 'ERROR');
+    }
 })();
