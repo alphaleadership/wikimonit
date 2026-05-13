@@ -25,29 +25,33 @@ function logToFile(message, level = 'INFO') {
 
 function syncGit() {
     try {
+        // 1. Vérifier s'il y a des changements locaux à envoyer d'abord
+        const status = execSync('git status --porcelain', { encoding: 'utf-8' }).trim();
+        if (status) {
+            logToFile('Changements locaux détectés. Préparation du commit...');
+            try { execSync('git config user.name "WikiMonitBot"', { stdio: 'ignore' }); } catch(e) {}
+            try { execSync('git config user.email "bot@wikimonit.local"', { stdio: 'ignore' }); } catch(e) {}
+            
+            execSync('git add .', { encoding: 'utf-8' });
+            execSync('git commit -m "Bot: sauvegarde automatique avant synchronisation"', { encoding: 'utf-8' });
+            logToFile('Changements locaux commités.');
+        }
+
+        // 2. Synchronisation (Pull)
         logToFile('Synchronisation Git (Pull)...');
-        // 1. Récupérer les changements distants (avec rebase pour garder un historique propre)
         const pullOutput = execSync('git pull --rebase', { encoding: 'utf-8' });
         if (!pullOutput.includes('Already up to date.')) {
             logToFile(`Mise à jour reçue : ${pullOutput.trim()}`);
         }
 
-        // 2. Vérifier s'il y a des changements locaux à envoyer
-        const status = execSync('git status --porcelain', { encoding: 'utf-8' }).trim();
-        if (status) {
-            logToFile('Changements locaux détectés. Synchronisation (Push)...');
-            // Configure un utilisateur par défaut pour le bot si ce n'est pas fait
-            try { execSync('git config user.name "WikiMonitBot"', { stdio: 'ignore' }); } catch(e) {}
-            try { execSync('git config user.email "bot@wikimonit.local"', { stdio: 'ignore' }); } catch(e) {}
-            
-            execSync('git add .', { encoding: 'utf-8' });
-            execSync('git commit -m "Bot: synchronisation automatique des fichiers locaux"', { encoding: 'utf-8' });
+        // 3. Envoyer tout (Push)
+        if (status || !pullOutput.includes('Already up to date.')) {
+            logToFile('Synchronisation Git (Push)...');
             const pushOutput = execSync('git push', { encoding: 'utf-8' });
-            logToFile(`Changements envoyés avec succès : ${pushOutput.trim() || 'OK'}`);
+            logToFile(`Synchronisation terminée : ${pushOutput.trim() || 'OK'}`);
         }
     } catch (e) {
         logToFile(`Erreur lors de la synchronisation Git : ${e.message}`, 'ERROR');
-        // Si conflit, on peut essayer d'annuler le rebase pour ne pas bloquer
         if (e.message.includes('rebase')) {
             try { execSync('git rebase --abort'); } catch(err) {}
         }
