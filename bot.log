@@ -1,0 +1,26 @@
+[2026-05-13T06:39:07.038Z] [INFO] Utilisateur:Pmartin/MonitoringTargets
+[2026-05-13T06:39:14.884Z] [INFO] Alerte envoyée sur : Discussion_utilisateur:Arbinger_bot
+[2026-05-13T06:39:16.840Z] [INFO] Alerte envoyée sur : Discussion_utilisateur:Pmartin
+[2026-05-13T06:39:17.503Z] [INFO] Alerte envoyée sur : Discussion_utilisateur:Spartan.arbinger
+[2026-05-13T06:39:17.503Z] [INFO] MonitoringBot connecté à Wikipédia 🎯
+[2026-05-13T06:39:17.504Z] [INFO] Vérification des mises à jour Git...
+[2026-05-13T06:39:17.838Z] [INFO] Le code est déjà à jour.
+[2026-05-13T06:39:18.057Z] [WARN] Session perdue (actuellement: userinfo). Re-connexion...
+[2026-05-13T06:39:18.387Z] [ERROR] Erreur session, tentative de reconnexion: Already logged in as Pmartin@wikibot, logout first to re-login
+[2026-05-13T06:39:18.761Z] [ERROR] Échec re-connexion: Already logged in as Pmartin@wikibot, logout first to re-login
+[2026-05-13T06:39:19.350Z] [WARN] Config restaurée suite à modification non autorisée par undefined
+[2026-05-13T06:39:20.449Z] [INFO] Alerte envoyée sur : Discussion_utilisateur:Arbinger_bot
+[2026-05-13T06:39:21.816Z] [INFO] Alerte envoyée sur : Discussion_utilisateur:Pmartin
+[2026-05-13T06:39:22.611Z] [INFO] Alerte envoyée sur : Discussion_utilisateur:Spartan.arbinger
+[2026-05-13T06:39:37.839Z] [INFO] Vérification des mises à jour Git...
+[2026-05-13T06:39:38.191Z] [INFO] Le code est déjà à jour.
+[2026-05-13T06:39:38.379Z] [WARN] Session perdue (actuellement: userinfo). Re-connexion...
+[2026-05-13T06:39:38.783Z] [ERROR] Erreur session, tentative de reconnexion: Already logged in as Pmartin@wikibot, logout first to re-login
+[2026-05-13T06:39:39.134Z] [ERROR] Échec re-connexion: Already logged in as Pmartin@wikibot, logout first to re-login
+[2026-05-13T06:39:39.773Z] [WARN] Config restaurée suite à modification non autorisée par undefined
+[2026-05-13T06:39:57.839Z] [INFO] Vérification des mises à jour Git...
+[2026-05-13T06:39:58.204Z] [INFO] Le code est déjà à jour.
+[2026-05-13T06:39:58.373Z] [WARN] Session perdue (actuellement: userinfo). Re-connexion...
+[2026-05-13T06:39:58.741Z] [ERROR] Erreur session, tentative de reconnexion: Already logged in as Pmartin@wikibot, logout first to re-login
+[2026-05-13T06:39:59.134Z] [ERROR] Échec re-connexion: Already logged in as Pmartin@wikibot, logout first to re-login
+[2026-05-13T06:39:59.735Z] [WARN] Config restaurée suite à modification non autorisée par undefined
