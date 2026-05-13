@@ -15,7 +15,7 @@ const LOG_FILE = path.join(__dirname, 'bot.log');
 function logToFile(message, level = 'INFO') {
     const timestamp = new Date().toISOString();
     const formattedMessage = `[${timestamp}] [${level}] ${message}\n`;
-    console.log(formattedMessage.trim()); // Garde aussi l'affichage console
+    process.stdout.write(formattedMessage); // Utilise stdout pour plus de consistance avec nodemon
     try {
         fs.appendFileSync(LOG_FILE, formattedMessage);
     } catch (err) {
@@ -317,9 +317,9 @@ async function loop() {
     try {
         // bot.getTokensAndSiteInfo() rafraîchit les jetons et les infos utilisateur
         await bot.getTokensAndSiteInfo();
-        const currentUser = bot.userinfo()?.name;
-        logToFile(`${JSON.stringify({event: 'SessionCheck', data:bot.userinfo().then(user => {logToFile(user.name); return user.name})})}`);
-        if (!currentUser) {
+        bot.userinfo().then((info) => {
+            const currentUser = info?.name;
+ if (!currentUser) {
             logToFile("Session non détectée. Tentative de connexion...", 'WARN');
             await bot.login();
         } else if (currentUser.toLowerCase() !== botAccountName.toLowerCase()) {
@@ -327,6 +327,10 @@ async function loop() {
             await bot.logout();
             await bot.login();
         }
+        })
+        //const currentUser = bot.userinfo?.name;
+        
+       
         // Si currentUser === botAccountName, on ne fait rien, on est déjà bien connecté
     } catch (e) {
         if (!e.message.includes('Already logged in')) {
