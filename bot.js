@@ -27,7 +27,7 @@ function syncGit() {
     try {
         // 1. Sauvegarde des logs sur la branche dédiée
         logToFile('Synchronisation des logs...');
-        execSync('git checkout logs', { stdio: 'ignore' });
+        //execSync('git checkout logs', { stdio: 'ignore' });
         // On s'assure que bot.log est bien ajouté même s'il est dans .gitignore de main
         execSync('git add -f bot.log', { stdio: 'ignore' });
         const logStatus = execSync('git status --porcelain', { encoding: 'utf-8' }).trim();
@@ -36,7 +36,7 @@ function syncGit() {
             execSync('git push origin logs', { stdio: 'ignore' });
             logToFile('Logs synchronisés sur la branche logs.');
         }
-        execSync('git checkout main', { stdio: 'ignore' });
+        //execSync('git checkout main', { stdio: 'ignore' });
 
         // 2. Synchronisation du code (Main)
         const status = execSync('git status --porcelain', { encoding: 'utf-8' }).trim();
