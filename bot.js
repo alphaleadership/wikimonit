@@ -297,7 +297,7 @@ disk.forEach(d => {
     const urls = await getMonitorUrls();
     await Promise.all(urls.map(async (url) => {
         try {
-            await axios.get(url, { timeout: 10000 });
+            await axios.get(url, { timeout: 10000,userAgent:`mozilla/5.0 (compatible; MonitoringBot/1.0)` });
         } catch (e) {
             currentAlerts.push({
                 id: `URL:${url}`,
