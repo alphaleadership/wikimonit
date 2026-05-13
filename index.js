@@ -29,13 +29,15 @@ const bot = new Mwn({
     apiUrl: 'https://fr.wikipedia.org/w/api.php',
     username: process.env.WIKI_BOTUSER,
     password: process.env.WIKI_BOTPASS,
+    userAgent: `WikiMonitBot (https://fr.wikipedia.org/wiki/Utilisateur:${process.env.WIKI_BOTUSER.split('@')[0]})`,
     defaultParams: { },
-    silent: true
+    silent: false
 });
 
 // === Items précédents envoyés (anti-spam)
 let activeWarnings = new Set();
-let allowedUsers = new Set([process.env.WIKI_BOTUSER]);
+const botAccountName = process.env.WIKI_BOTUSER.split('@')[0];
+let allowedUsers = new Set([botAccountName,"Spartan.arbinger"]);
 
 // === Utilitaires ===
 function todayBistroPage() {
@@ -250,6 +252,17 @@ disk.forEach(d => {
 
 // === Loop ===
 async function loop() {
+    try {
+        await bot.getTokensAndSiteInfo();
+        if (!bot.userinfo || bot.userinfo.name !== botAccountName) {
+            console.warn(`[MonitoringBot] Session perdue (actuellement: ${bot.userinfo?.name || 'anonyme'}). Re-connexion...`);
+            await bot.login();
+        }
+    } catch (e) {
+        console.error("[MonitoringBot] Erreur session, tentative de reconnexion...", e.message);
+        await bot.login().catch(err => console.error("[MonitoringBot] Échec re-connexion", err.message));
+    }
+
     await readConfigFromWiki();
     await ensureTargetsAllowed();
     await checkSystem();
