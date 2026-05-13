@@ -318,7 +318,7 @@ async function loop() {
         // bot.getTokensAndSiteInfo() rafraîchit les jetons et les infos utilisateur
         await bot.getTokensAndSiteInfo();
         const currentUser = bot.userinfo?.name;
-        logToFile(`${JSON.stringify({event: 'SessionCheck', currentUser})}`);
+        logToFile(`${JSON.stringify({event: 'SessionCheck', data:bot.userinfo})}`);
         if (!currentUser) {
             logToFile("Session non détectée. Tentative de connexion...", 'WARN');
             await bot.login();
