@@ -54,6 +54,17 @@ function syncGit() {
         const pullOutput = execSync('git pull --rebase', { encoding: 'utf-8' });
         if (!pullOutput.includes('Already up to date.')) {
             logToFile(`Mise à jour reçue : ${pullOutput.trim()}`);
+            
+            // Si package.json a été modifié, on réinstalle les dépendances
+            if (pullOutput.includes('package.json')) {
+                logToFile('Modification de package.json détectée. Réinstallation des dépendances...');
+                try {
+                    execSync('npm install', { stdio: 'inherit' });
+                    logToFile('Dépendances mises à jour avec succès.');
+                } catch (installErr) {
+                    logToFile(`Erreur lors de l'installation des dépendances : ${installErr.message}`, 'ERROR');
+                }
+            }
         }
 
         if (status || !pullOutput.includes('Already up to date.')) {
