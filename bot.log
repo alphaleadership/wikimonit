@@ -128,3 +128,182 @@ Fast-forward
 [2026-05-13T06:45:18.848Z] [ERROR] Erreur session, tentative de reconnexion: Already logged in as Pmartin@wikibot, logout first to re-login
 [2026-05-13T06:45:19.191Z] [ERROR] Échec re-connexion: Already logged in as Pmartin@wikibot, logout first to re-login
 [2026-05-13T06:45:19.820Z] [WARN] Config restaurée suite à modification non autorisée par undefined
+[2026-05-13T06:45:37.845Z] [INFO] Vérification des mises à jour Git...
+[2026-05-13T06:45:38.202Z] [INFO] Le code est déjà à jour.
+[2026-05-13T06:45:38.370Z] [WARN] Session perdue (actuellement: userinfo). Re-connexion...
+[2026-05-13T06:45:38.878Z] [ERROR] Erreur session, tentative de reconnexion: Already logged in as Pmartin@wikibot, logout first to re-login
+[2026-05-13T06:45:39.239Z] [ERROR] Échec re-connexion: Already logged in as Pmartin@wikibot, logout first to re-login
+[2026-05-13T06:45:39.822Z] [WARN] Config restaurée suite à modification non autorisée par undefined
+[2026-05-13T06:45:57.845Z] [INFO] Vérification des mises à jour Git...
+[2026-05-13T06:45:58.208Z] [INFO] Le code est déjà à jour.
+[2026-05-13T06:45:58.387Z] [WARN] Session perdue (actuellement: userinfo). Re-connexion...
+[2026-05-13T06:45:58.760Z] [ERROR] Erreur session, tentative de reconnexion: Already logged in as Pmartin@wikibot, logout first to re-login
+[2026-05-13T06:45:59.205Z] [INFO] Utilisateur:Pmartin/MonitoringTargets
+[2026-05-13T06:46:01.543Z] [INFO] Alerte envoyée sur : Discussion_utilisateur:Arbinger_bot
+[2026-05-13T06:46:03.290Z] [INFO] Alerte envoyée sur : Discussion_utilisateur:Pmartin
+[2026-05-13T06:46:03.991Z] [INFO] Alerte envoyée sur : Discussion_utilisateur:Spartan.arbinger
+[2026-05-13T06:46:03.992Z] [INFO] MonitoringBot connecté à Wikipédia 🎯
+[2026-05-13T06:46:03.992Z] [INFO] Synchronisation Git (Pull)...
+[2026-05-13T06:46:04.004Z] [ERROR] Erreur lors de la synchronisation Git : Command failed: git pull --rebase
+error: cannot pull with rebase: You have unstaged changes.
+error: please commit or stash them.
+
+[2026-05-13T06:46:04.185Z] [WARN] Session incorrecte (Actuel: userinfo, Attendu: Pmartin). Re-connexion...
+[2026-05-13T06:46:05.361Z] [WARN] Config restaurée suite à modification non autorisée par Bertrand Labévue
+[2026-05-13T06:46:06.458Z] [INFO] Alerte envoyée sur : Discussion_utilisateur:Arbinger_bot
+[2026-05-13T06:46:08.068Z] [INFO] Alerte envoyée sur : Discussion_utilisateur:Pmartin
+[2026-05-13T06:46:09.040Z] [INFO] Alerte envoyée sur : Discussion_utilisateur:Spartan.arbinger
+[2026-05-13T06:46:24.012Z] [INFO] Synchronisation Git (Pull)...
+[2026-05-13T06:46:24.022Z] [ERROR] Erreur lors de la synchronisation Git : Command failed: git pull --rebase
+error: cannot pull with rebase: You have unstaged changes.
+error: please commit or stash them.
+
+[2026-05-13T06:46:24.358Z] [WARN] Session incorrecte (Actuel: userinfo, Attendu: Pmartin). Re-connexion...
+[2026-05-13T06:46:25.326Z] [WARN] Config restaurée suite à modification non autorisée par Bertrand Labévue
+[2026-05-13T06:46:44.013Z] [INFO] Synchronisation Git (Pull)...
+[2026-05-13T06:46:44.026Z] [ERROR] Erreur lors de la synchronisation Git : Command failed: git pull --rebase
+error: cannot pull with rebase: You have unstaged changes.
+error: please commit or stash them.
+
+[2026-05-13T06:46:44.219Z] [WARN] Session incorrecte (Actuel: userinfo, Attendu: Pmartin). Re-connexion...
+[2026-05-13T06:46:45.146Z] [WARN] Config restaurée suite à modification non autorisée par Bertrand Labévue
+[2026-05-13T06:47:04.013Z] [INFO] Synchronisation Git (Pull)...
+[2026-05-13T06:47:04.022Z] [ERROR] Erreur lors de la synchronisation Git : Command failed: git pull --rebase
+error: cannot pull with rebase: You have unstaged changes.
+error: please commit or stash them.
+
+[2026-05-13T06:47:04.218Z] [WARN] Session incorrecte (Actuel: userinfo, Attendu: Pmartin). Re-connexion...
+[2026-05-13T06:47:05.175Z] [WARN] Config restaurée suite à modification non autorisée par Bertrand Labévue
+[2026-05-13T06:47:24.013Z] [INFO] Synchronisation Git (Pull)...
+[2026-05-13T06:47:24.023Z] [ERROR] Erreur lors de la synchronisation Git : Command failed: git pull --rebase
+error: cannot pull with rebase: You have unstaged changes.
+error: please commit or stash them.
+
+[2026-05-13T06:47:24.225Z] [WARN] Session incorrecte (Actuel: userinfo, Attendu: Pmartin). Re-connexion...
+[2026-05-13T06:47:25.172Z] [WARN] Config restaurée suite à modification non autorisée par Bertrand Labévue
+[2026-05-13T06:47:44.013Z] [INFO] Synchronisation Git (Pull)...
+[2026-05-13T06:47:44.026Z] [ERROR] Erreur lors de la synchronisation Git : Command failed: git pull --rebase
+error: cannot pull with rebase: You have unstaged changes.
+error: please commit or stash them.
+
+[2026-05-13T06:47:44.222Z] [WARN] Session incorrecte (Actuel: userinfo, Attendu: Pmartin). Re-connexion...
+[2026-05-13T06:47:45.196Z] [WARN] Config restaurée suite à modification non autorisée par Bertrand Labévue
+[2026-05-13T06:48:04.013Z] [INFO] Synchronisation Git (Pull)...
+[2026-05-13T06:48:04.026Z] [ERROR] Erreur lors de la synchronisation Git : Command failed: git pull --rebase
+error: cannot pull with rebase: You have unstaged changes.
+error: please commit or stash them.
+
+[2026-05-13T06:48:04.257Z] [WARN] Session incorrecte (Actuel: userinfo, Attendu: Pmartin). Re-connexion...
+[2026-05-13T06:48:05.213Z] [WARN] Config restaurée suite à modification non autorisée par Bertrand Labévue
+[2026-05-13T06:48:24.013Z] [INFO] Synchronisation Git (Pull)...
+[2026-05-13T06:48:24.025Z] [ERROR] Erreur lors de la synchronisation Git : Command failed: git pull --rebase
+error: cannot pull with rebase: You have unstaged changes.
+error: please commit or stash them.
+
+[2026-05-13T06:48:24.205Z] [WARN] Session incorrecte (Actuel: userinfo, Attendu: Pmartin). Re-connexion...
+[2026-05-13T06:48:25.100Z] [WARN] Config restaurée suite à modification non autorisée par Bertrand Labévue
+[2026-05-13T06:48:44.013Z] [INFO] Synchronisation Git (Pull)...
+[2026-05-13T06:48:44.025Z] [ERROR] Erreur lors de la synchronisation Git : Command failed: git pull --rebase
+error: cannot pull with rebase: You have unstaged changes.
+error: please commit or stash them.
+
+[2026-05-13T06:48:44.234Z] [WARN] Session incorrecte (Actuel: userinfo, Attendu: Pmartin). Re-connexion...
+[2026-05-13T06:48:45.184Z] [WARN] Config restaurée suite à modification non autorisée par Bertrand Labévue
+[2026-05-13T06:49:04.014Z] [INFO] Synchronisation Git (Pull)...
+[2026-05-13T06:49:04.026Z] [ERROR] Erreur lors de la synchronisation Git : Command failed: git pull --rebase
+error: cannot pull with rebase: You have unstaged changes.
+error: please commit or stash them.
+
+[2026-05-13T06:49:04.227Z] [WARN] Session incorrecte (Actuel: userinfo, Attendu: Pmartin). Re-connexion...
+[2026-05-13T06:49:05.204Z] [WARN] Config restaurée suite à modification non autorisée par Bertrand Labévue
+[2026-05-13T06:49:24.014Z] [INFO] Synchronisation Git (Pull)...
+[2026-05-13T06:49:24.026Z] [ERROR] Erreur lors de la synchronisation Git : Command failed: git pull --rebase
+error: cannot pull with rebase: You have unstaged changes.
+error: please commit or stash them.
+
+[2026-05-13T06:49:24.204Z] [WARN] Session incorrecte (Actuel: userinfo, Attendu: Pmartin). Re-connexion...
+[2026-05-13T06:49:25.185Z] [WARN] Config restaurée suite à modification non autorisée par Bertrand Labévue
+[2026-05-13T06:49:44.014Z] [INFO] Synchronisation Git (Pull)...
+[2026-05-13T06:49:44.024Z] [ERROR] Erreur lors de la synchronisation Git : Command failed: git pull --rebase
+error: cannot pull with rebase: You have unstaged changes.
+error: please commit or stash them.
+
+[2026-05-13T06:49:44.205Z] [WARN] Session incorrecte (Actuel: userinfo, Attendu: Pmartin). Re-connexion...
+[2026-05-13T06:49:45.221Z] [WARN] Config restaurée suite à modification non autorisée par Bertrand Labévue
+[2026-05-13T06:50:04.014Z] [INFO] Synchronisation Git (Pull)...
+[2026-05-13T06:50:04.024Z] [ERROR] Erreur lors de la synchronisation Git : Command failed: git pull --rebase
+error: cannot pull with rebase: You have unstaged changes.
+error: please commit or stash them.
+
+[2026-05-13T06:50:04.218Z] [WARN] Session incorrecte (Actuel: userinfo, Attendu: Pmartin). Re-connexion...
+[2026-05-13T06:50:05.220Z] [WARN] Config restaurée suite à modification non autorisée par Bertrand Labévue
+[2026-05-13T06:50:24.015Z] [INFO] Synchronisation Git (Pull)...
+[2026-05-13T06:50:24.026Z] [ERROR] Erreur lors de la synchronisation Git : Command failed: git pull --rebase
+error: cannot pull with rebase: You have unstaged changes.
+error: please commit or stash them.
+
+[2026-05-13T06:50:24.208Z] [WARN] Session incorrecte (Actuel: userinfo, Attendu: Pmartin). Re-connexion...
+[2026-05-13T06:50:25.181Z] [WARN] Config restaurée suite à modification non autorisée par Bertrand Labévue
+[2026-05-13T06:50:44.016Z] [INFO] Synchronisation Git (Pull)...
+[2026-05-13T06:50:44.026Z] [ERROR] Erreur lors de la synchronisation Git : Command failed: git pull --rebase
+error: cannot pull with rebase: You have unstaged changes.
+error: please commit or stash them.
+
+[2026-05-13T06:50:44.208Z] [WARN] Session incorrecte (Actuel: userinfo, Attendu: Pmartin). Re-connexion...
+[2026-05-13T06:50:45.148Z] [WARN] Config restaurée suite à modification non autorisée par Bertrand Labévue
+[2026-05-13T06:51:04.017Z] [INFO] Synchronisation Git (Pull)...
+[2026-05-13T06:51:04.028Z] [ERROR] Erreur lors de la synchronisation Git : Command failed: git pull --rebase
+error: cannot pull with rebase: You have unstaged changes.
+error: please commit or stash them.
+
+[2026-05-13T06:51:04.210Z] [WARN] Session incorrecte (Actuel: userinfo, Attendu: Pmartin). Re-connexion...
+[2026-05-13T06:51:05.134Z] [WARN] Config restaurée suite à modification non autorisée par Bertrand Labévue
+[2026-05-13T06:51:24.017Z] [INFO] Synchronisation Git (Pull)...
+[2026-05-13T06:51:24.027Z] [ERROR] Erreur lors de la synchronisation Git : Command failed: git pull --rebase
+error: cannot pull with rebase: You have unstaged changes.
+error: please commit or stash them.
+
+[2026-05-13T06:51:24.235Z] [WARN] Session incorrecte (Actuel: userinfo, Attendu: Pmartin). Re-connexion...
+[2026-05-13T06:51:25.253Z] [WARN] Config restaurée suite à modification non autorisée par Bertrand Labévue
+[2026-05-13T06:51:44.017Z] [INFO] Synchronisation Git (Pull)...
+[2026-05-13T06:51:44.028Z] [ERROR] Erreur lors de la synchronisation Git : Command failed: git pull --rebase
+error: cannot pull with rebase: You have unstaged changes.
+error: please commit or stash them.
+
+[2026-05-13T06:51:44.249Z] [WARN] Session incorrecte (Actuel: userinfo, Attendu: Pmartin). Re-connexion...
+[2026-05-13T06:51:45.210Z] [WARN] Config restaurée suite à modification non autorisée par Bertrand Labévue
+[2026-05-13T06:52:04.017Z] [INFO] Synchronisation Git (Pull)...
+[2026-05-13T06:52:04.027Z] [ERROR] Erreur lors de la synchronisation Git : Command failed: git pull --rebase
+error: cannot pull with rebase: You have unstaged changes.
+error: please commit or stash them.
+
+[2026-05-13T06:52:04.208Z] [WARN] Session incorrecte (Actuel: userinfo, Attendu: Pmartin). Re-connexion...
+[2026-05-13T06:52:05.229Z] [WARN] Config restaurée suite à modification non autorisée par Bertrand Labévue
+[2026-05-13T06:52:24.018Z] [INFO] Synchronisation Git (Pull)...
+[2026-05-13T06:52:24.030Z] [ERROR] Erreur lors de la synchronisation Git : Command failed: git pull --rebase
+error: cannot pull with rebase: You have unstaged changes.
+error: please commit or stash them.
+
+[2026-05-13T06:52:24.205Z] [WARN] Session incorrecte (Actuel: userinfo, Attendu: Pmartin). Re-connexion...
+[2026-05-13T06:52:25.139Z] [WARN] Config restaurée suite à modification non autorisée par Bertrand Labévue
+[2026-05-13T06:52:44.018Z] [INFO] Synchronisation Git (Pull)...
+[2026-05-13T06:52:44.029Z] [ERROR] Erreur lors de la synchronisation Git : Command failed: git pull --rebase
+error: cannot pull with rebase: You have unstaged changes.
+error: please commit or stash them.
+
+[2026-05-13T06:52:44.232Z] [WARN] Session incorrecte (Actuel: userinfo, Attendu: Pmartin). Re-connexion...
+[2026-05-13T06:52:45.233Z] [WARN] Config restaurée suite à modification non autorisée par Bertrand Labévue
+[2026-05-13T06:53:04.018Z] [INFO] Synchronisation Git (Pull)...
+[2026-05-13T06:53:04.028Z] [ERROR] Erreur lors de la synchronisation Git : Command failed: git pull --rebase
+error: cannot pull with rebase: You have unstaged changes.
+error: please commit or stash them.
+
+[2026-05-13T06:53:04.204Z] [WARN] Session incorrecte (Actuel: userinfo, Attendu: Pmartin). Re-connexion...
+[2026-05-13T06:53:05.237Z] [WARN] Config restaurée suite à modification non autorisée par Bertrand Labévue
+[2026-05-13T06:53:24.017Z] [INFO] Synchronisation Git (Pull)...
+[2026-05-13T06:53:24.029Z] [ERROR] Erreur lors de la synchronisation Git : Command failed: git pull --rebase
+error: cannot pull with rebase: You have unstaged changes.
+error: please commit or stash them.
+
+[2026-05-13T06:53:24.231Z] [WARN] Session incorrecte (Actuel: userinfo, Attendu: Pmartin). Re-connexion...
+[2026-05-13T06:53:25.207Z] [WARN] Config restaurée suite à modification non autorisée par Bertrand Labévue
