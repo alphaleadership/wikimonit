@@ -1,6 +1,6 @@
 // === Load environment variables ===
 require('dotenv').config();
-process.exit(0)
+//process.exit(0)
 // === Module imports ===
 const { Mwn } = require('mwn');
 const si = require('systeminformation');
