@@ -142055,3 +142055,16 @@ error: failed to push some refs to 'https://github.com/alphaleadership/wikimonit
 [2026-05-25T08:45:52.131Z] [INFO] Synchronisation des logs...
 [2026-05-25T08:45:53.307Z] [INFO] Logs synchronisés sur la branche logs.
 [2026-05-25T08:45:53.317Z] [INFO] Changements locaux détectés. Préparation du commit...
+[2026-05-25T08:45:53.838Z] [INFO] Changements locaux commités.
+[2026-05-25T08:45:53.838Z] [INFO] Synchronisation Git (Pull)...
+[2026-05-25T08:45:54.167Z] [INFO] Synchronisation Git (Push)...
+[2026-05-25T08:45:58.838Z] [ERROR] Erreur lors de la synchronisation Git : Command failed: git push origin main
+remote: Internal Server Error
+remote: Request ID 8682:13C006:19A6379:132EC9A:6A14111C        
+remote: Time 2026-05-25T09:06:40Z
+To https://github.com/alphaleadership/wikimonit.git
+ ! [remote rejected]       main -> main (Internal Server Error)
+error: failed to push some refs to 'https://github.com/alphaleadership/wikimonit.git'
+
+[2026-05-25T08:45:59.211Z] [INFO] Vérification session... (Utilisateur actuel: Pmartin)
+[2026-05-25T08:46:12.133Z] [INFO] Synchronisation des logs...
