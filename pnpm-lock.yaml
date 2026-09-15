@@ -9,20 +9,20 @@ importers:
   .:
     dependencies:
       axios:
-        specifier: ^1.16.0
-        version: 1.16.0
+        specifier: ^1.18.0
+        version: 1.18.0(debug@4.4.3(supports-color@5.5.0))(supports-color@5.5.0)
       axios-cookiejar-support:
         specifier: ^6.0.5
-        version: 6.0.5(axios@1.16.0)(tough-cookie@6.0.1)
+        version: 6.0.5(axios@1.18.0(debug@4.4.3(supports-color@5.5.0))(supports-color@5.5.0))(tough-cookie@6.0.1)
       dotenv:
         specifier: ^17.2.3
         version: 17.4.2
       mwn:
         specifier: ^3.0.1
-        version: 3.0.2
+        version: 3.0.2(debug@4.4.3(supports-color@5.5.0))(supports-color@5.5.0)
       systeminformation:
-        specifier: ^5.27.11
-        version: 5.31.6
+        specifier: ^5.31.7
+        version: 5.31.7
       tough-cookie:
         specifier: ^6.0.0
         version: 6.0.1
@@ -38,6 +38,10 @@ packages:
 
   '@types/tough-cookie@4.0.5':
     resolution: {integrity: sha512-/Ad8+nIOV7Rl++6f1BdKxFSMgmoqEoYbHRpPcx3JEfv8VRsQe9Z4mCXeJBzxs7mbHY/XOZZuXlRNfhpVPbs6ZA==}
+
+  agent-base@6.0.2:
+    resolution: {integrity: sha512-RZNwNclF7+MS/8bDg70amg32dyeZGZxiDuQmZxKLAlQjr3jGyLx+4Kkk58UO7D2QdgFIQCovuSuZESne6RG6XQ==}
+    engines: {node: '>= 6.0.0'}
 
   agent-base@9.0.0:
     resolution: {integrity: sha512-TQf59BsZnytt8GdJKLPfUZ54g/iaUL2OWDSFCCvMOhsHduDQxO8xC4PNeyIkVcA5KwL2phPSv0douC0fgWzmnA==}
@@ -61,8 +65,8 @@ packages:
       axios: '>=0.20.0'
       tough-cookie: '>=4.0.0'
 
-  axios@1.16.0:
-    resolution: {integrity: sha512-6hp5CwvTPlN2A31g5dxnwAX0orzM7pmCRDLnZSX772mv8WDqICwFjowHuPs04Mc8deIld1+ejhtaMn5vp6b+1w==}
+  axios@1.18.0:
+    resolution: {integrity: sha512-E32NzpYKp++W7XRe52rHiXV2ehxmh3wbdgO7MHeFM+vqxLBYHzt0ElkiImtOBxtOmyp0yoC8C6uESVV84Y2/hw==}
 
   balanced-match@4.0.4:
     resolution: {integrity: sha512-BLrgEcRTwX2o6gGxGOCNyMvGSp35YofuYzw9h1IMTRmKqttAZZVU67bdb9Pr2vUHA8+j3i2tJfjO6C6+4myGTA==}
@@ -132,8 +136,8 @@ packages:
     resolution: {integrity: sha512-Zf5H2Kxt2xjTvbJvP2ZWLEICxA6j+hAmMzIlypy4xcBg1vKVnx89Wy0GbS+kf5cwCVFFzdCFh2XSCFNULS6csw==}
     engines: {node: '>= 0.4'}
 
-  es-object-atoms@1.1.1:
-    resolution: {integrity: sha512-FGgH2h8zKNim9ljj7dankFPcICIK9Cp5bm+c2gQSYePhpaG5+esrLODihIorn+Pe6FGJzWhXQotPv73jTaldXA==}
+  es-object-atoms@1.1.2:
+    resolution: {integrity: sha512-HWcBoN6NileqtSydK2FqHbS/LoDd2pqrnQHLyJzBj4kOp/ky2MWMN694xOfkK8/SnUsW2DH7EfyVlydKCsm1Zw==}
     engines: {node: '>= 0.4'}
 
   es-set-tostringtag@2.1.0:
@@ -155,6 +159,10 @@ packages:
 
   form-data@4.0.5:
     resolution: {integrity: sha512-8RipRLol37bNs2bhoV67fiTEvdTrbMUYcFTiy3+wuuOnUog2QBHCZWXDRijWQfAkhBj2Uf5UnVaiWwA5vdd82w==}
+    engines: {node: '>= 6'}
+
+  form-data@4.0.6:
+    resolution: {integrity: sha512-vKatAh4SlVfgbv+YtmhiRjhEMJsYpsG1Y2rMQtR+SVSbytsSD1YGzDIcrAJmdFec88u/+VoGmxnl+80gL1tRCQ==}
     engines: {node: '>= 6'}
 
   fsevents@2.3.3:
@@ -201,6 +209,10 @@ packages:
     resolution: {integrity: sha512-ej4AhfhfL2Q2zpMmLo7U1Uv9+PyhIZpgQLGT1F9miIGmiCJIoCgSmczFdrc97mWT4kVY72KA+WnnhJ5pghSvSg==}
     engines: {node: '>= 0.4'}
 
+  hasown@2.0.4:
+    resolution: {integrity: sha512-T2UbfbBEF32wiepXIsMlTW9+dDYC6wMh/t/vYA4tuOMKqWz/n3vr1NFSxQiyP+zk2mXsoMA/i/7qV6LKut1t1A==}
+    engines: {node: '>= 0.4'}
+
   http-cookie-agent@7.0.4:
     resolution: {integrity: sha512-BF9iTnice7+LI4tHB8Bm0nFnp+J+bAY5Cll53uEa9NIFQCM7noUyWbImqJhB+j0drmJHvE/Wr6o+8FXq7IVYeA==}
     engines: {node: '>=20.0.0'}
@@ -210,6 +222,10 @@ packages:
     peerDependenciesMeta:
       undici:
         optional: true
+
+  https-proxy-agent@5.0.1:
+    resolution: {integrity: sha512-dFcAjpTQFgoLMzC2VwU+C/CbS7uRL0lWmxDITmqm7C+7F0Odmj6s9l6alZc6AELXhrnggM2CeWSXHGOdX2YtwA==}
+    engines: {node: '>= 6'}
 
   ignore-by-default@1.0.1:
     resolution: {integrity: sha512-Ius2VYcGNk7T90CppJqcIkS5ooHUZyIQK+ClZfMfMNFEF9VSE73Fq+906u/CWu92x4gzZMWOwfFYckPObzdEbA==}
@@ -310,8 +326,8 @@ packages:
     resolution: {integrity: sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw==}
     engines: {node: '>=8'}
 
-  systeminformation@5.31.6:
-    resolution: {integrity: sha512-Uv2b2uGGM6ns+26czgW2cYRabYdnswM0ddSOOlryHOaelzsmDSet1iM/NT7VOYxW8x/BW+HkY+b1Ve2pLTSGSA==}
+  systeminformation@5.31.7:
+    resolution: {integrity: sha512-/8NC53e5nP9nmhn42/ncdOkyJnOoue/Vy+tJOyUGd1Yv66G069wK4rrziwhrqDETgk78CudTQupw5z19S5uoZw==}
     engines: {node: '>=8.0.0'}
     os: [darwin, linux, win32, freebsd, openbsd, netbsd, sunos, android]
     hasBin: true
@@ -358,6 +374,12 @@ snapshots:
 
   '@types/tough-cookie@4.0.5': {}
 
+  agent-base@6.0.2(supports-color@5.5.0):
+    dependencies:
+      debug: 4.4.3(supports-color@5.5.0)
+    transitivePeerDependencies:
+      - supports-color
+
   agent-base@9.0.0: {}
 
   ansi-styles@4.3.0:
@@ -371,21 +393,23 @@ snapshots:
 
   asynckit@0.4.0: {}
 
-  axios-cookiejar-support@6.0.5(axios@1.16.0)(tough-cookie@6.0.1):
+  axios-cookiejar-support@6.0.5(axios@1.18.0(debug@4.4.3(supports-color@5.5.0))(supports-color@5.5.0))(tough-cookie@6.0.1):
     dependencies:
-      axios: 1.16.0
+      axios: 1.18.0(debug@4.4.3(supports-color@5.5.0))(supports-color@5.5.0)
       http-cookie-agent: 7.0.4(tough-cookie@6.0.1)
       tough-cookie: 6.0.1
     transitivePeerDependencies:
       - undici
 
-  axios@1.16.0:
+  axios@1.18.0(debug@4.4.3(supports-color@5.5.0))(supports-color@5.5.0):
     dependencies:
-      follow-redirects: 1.16.0
-      form-data: 4.0.5
+      follow-redirects: 1.16.0(debug@4.4.3(supports-color@5.5.0))
+      form-data: 4.0.6
+      https-proxy-agent: 5.0.1(supports-color@5.5.0)
       proxy-from-env: 2.1.0
     transitivePeerDependencies:
       - debug
+      - supports-color
 
   balanced-match@4.0.4: {}
 
@@ -451,7 +475,7 @@ snapshots:
 
   es-errors@1.3.0: {}
 
-  es-object-atoms@1.1.1:
+  es-object-atoms@1.1.2:
     dependencies:
       es-errors: 1.3.0
 
@@ -460,13 +484,15 @@ snapshots:
       es-errors: 1.3.0
       get-intrinsic: 1.3.0
       has-tostringtag: 1.0.2
-      hasown: 2.0.3
+      hasown: 2.0.4
 
   fill-range@7.1.1:
     dependencies:
       to-regex-range: 5.0.1
 
-  follow-redirects@1.16.0: {}
+  follow-redirects@1.16.0(debug@4.4.3(supports-color@5.5.0)):
+    optionalDependencies:
+      debug: 4.4.3(supports-color@5.5.0)
 
   form-data@4.0.5:
     dependencies:
@@ -474,6 +500,14 @@ snapshots:
       combined-stream: 1.0.8
       es-set-tostringtag: 2.1.0
       hasown: 2.0.3
+      mime-types: 2.1.35
+
+  form-data@4.0.6:
+    dependencies:
+      asynckit: 0.4.0
+      combined-stream: 1.0.8
+      es-set-tostringtag: 2.1.0
+      hasown: 2.0.4
       mime-types: 2.1.35
 
   fsevents@2.3.3:
@@ -486,18 +520,18 @@ snapshots:
       call-bind-apply-helpers: 1.0.2
       es-define-property: 1.0.1
       es-errors: 1.3.0
-      es-object-atoms: 1.1.1
+      es-object-atoms: 1.1.2
       function-bind: 1.1.2
       get-proto: 1.0.1
       gopd: 1.2.0
       has-symbols: 1.1.0
-      hasown: 2.0.3
+      hasown: 2.0.4
       math-intrinsics: 1.1.0
 
   get-proto@1.0.1:
     dependencies:
       dunder-proto: 1.0.1
-      es-object-atoms: 1.1.1
+      es-object-atoms: 1.1.2
 
   glob-parent@5.1.2:
     dependencies:
@@ -519,10 +553,21 @@ snapshots:
     dependencies:
       function-bind: 1.1.2
 
+  hasown@2.0.4:
+    dependencies:
+      function-bind: 1.1.2
+
   http-cookie-agent@7.0.4(tough-cookie@6.0.1):
     dependencies:
       agent-base: 9.0.0
       tough-cookie: 6.0.1
+
+  https-proxy-agent@5.0.1(supports-color@5.5.0):
+    dependencies:
+      agent-base: 6.0.2(supports-color@5.5.0)
+      debug: 4.4.3(supports-color@5.5.0)
+    transitivePeerDependencies:
+      - supports-color
 
   ignore-by-default@1.0.1: {}
 
@@ -552,11 +597,11 @@ snapshots:
 
   ms@2.1.3: {}
 
-  mwn@3.0.2:
+  mwn@3.0.2(debug@4.4.3(supports-color@5.5.0))(supports-color@5.5.0):
     dependencies:
       '@types/node': 14.18.63
       '@types/tough-cookie': 4.0.5
-      axios: 1.16.0
+      axios: 1.18.0(debug@4.4.3(supports-color@5.5.0))(supports-color@5.5.0)
       chalk: 4.1.2
       form-data: 4.0.5
       oauth-1.0a: 2.2.6
@@ -564,6 +609,7 @@ snapshots:
       types-mediawiki-api: 2.0.0
     transitivePeerDependencies:
       - debug
+      - supports-color
 
   nodemon@3.1.14:
     dependencies:
@@ -616,7 +662,7 @@ snapshots:
     dependencies:
       has-flag: 4.0.0
 
-  systeminformation@5.31.6: {}
+  systeminformation@5.31.7: {}
 
   tldts-core@7.0.30: {}
 
